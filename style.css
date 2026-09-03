@@ -1,0 +1,395 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --text: #181a1d;
+    --subtext: #70757c;
+    --glass: rgba(255, 255, 255, 0.58);
+    --border: rgba(255, 255, 255, 0.78);
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans KR",
+        sans-serif;
+
+    color: var(--text);
+    line-height: 1.7;
+
+    background:
+        radial-gradient(
+            circle at 8% 5%,
+            rgba(203, 216, 232, 0.9),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(235, 225, 214, 0.8),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #edf0f3,
+            #f8f8f7 52%,
+            #e8ecef
+        );
+
+    background-attachment: fixed;
+}
+
+/* 전체 */
+
+.container {
+    width: min(850px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 45px 0 35px;
+}
+
+/* 페이지 이동 */
+
+.page-nav {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.page-nav a {
+    padding: 7px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.38);
+
+    color: #73777d;
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition: 0.2s ease;
+}
+
+.page-nav a:hover,
+.page-nav a.active {
+    background: rgba(255, 255, 255, 0.72);
+    color: #181a1d;
+}
+
+/* 공통 유리 카드 */
+
+header,
+section {
+    position: relative;
+
+    margin-bottom: 16px;
+    padding: 34px;
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    background: var(--glass);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 24px 55px rgba(35, 45, 60, 0.08),
+        0 5px 15px rgba(35, 45, 60, 0.035),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* 위쪽 유리 반사 */
+
+header::before,
+section::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 28px;
+    right: 28px;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Header */
+
+header {
+    padding: 70px 45px;
+
+    text-align: center;
+}
+
+header h1 {
+    font-size: clamp(36px, 7vw, 58px);
+    line-height: 1.15;
+
+    font-weight: 700;
+    letter-spacing: -0.06em;
+}
+
+header p:last-child {
+    margin-top: 18px;
+
+    color: var(--subtext);
+    font-size: 15px;
+}
+
+/* 작은 제목 */
+
+.eyebrow {
+    margin-bottom: 7px;
+
+    color: #858a91;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.17em;
+}
+
+/* Section 제목 */
+
+section h2 {
+    margin-bottom: 22px;
+
+    font-size: 25px;
+    line-height: 1.3;
+
+    letter-spacing: -0.04em;
+}
+
+/* 자기소개 */
+
+.profile-box {
+    margin-bottom: 20px;
+    padding: 20px 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.32);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.85),
+        0 8px 20px rgba(30, 40, 50, 0.04);
+}
+
+.label {
+    margin-bottom: 2px;
+
+    color: #8a8e94;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.description {
+    color: var(--subtext);
+    font-size: 15px;
+}
+
+/* 내부 카드 */
+
+.card {
+    padding: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, 0.3);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        0 10px 28px rgba(30, 40, 50, 0.045);
+
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 15px 32px rgba(30, 40, 50, 0.08);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+
+    font-size: 19px;
+    font-weight: 650;
+    letter-spacing: -0.025em;
+}
+
+.card p {
+    color: var(--subtext);
+    font-size: 14px;
+}
+
+/* 리스트 */
+
+.card ul {
+    margin-top: 17px;
+    padding-left: 20px;
+
+    color: #62676d;
+    font-size: 14px;
+}
+
+.card li {
+    margin-bottom: 5px;
+}
+
+/* 취미 */
+
+.hobby-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.hobby-list li {
+    padding: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.3);
+
+    color: #555a60;
+
+    font-size: 13px;
+    text-align: center;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        0 8px 20px rgba(30, 40, 50, 0.04);
+
+    transition: 0.2s ease;
+}
+
+.hobby-list li:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.48);
+}
+
+/* GitHub */
+
+.github {
+    padding: 42px 30px;
+    text-align: center;
+}
+
+.github h2 {
+    margin-bottom: 7px;
+}
+
+.github p {
+    color: var(--subtext);
+    font-size: 14px;
+}
+
+.github-button {
+    display: inline-block;
+
+    margin-top: 21px;
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 11px;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    color: #202328;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px rgba(30, 40, 50, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    transition: 0.2s ease;
+}
+
+.github-button:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.78);
+
+    box-shadow:
+        0 12px 25px rgba(30, 40, 50, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Footer */
+
+footer {
+    padding: 18px 0 5px;
+
+    color: #858a90;
+
+    font-size: 10px;
+    text-align: center;
+
+    letter-spacing: 0.05em;
+}
+
+/* 모바일 */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: calc(100% - 20px);
+        padding-top: 20px;
+    }
+
+    header,
+    section {
+        padding: 25px 20px;
+        border-radius: 19px;
+    }
+
+    header {
+        padding: 48px 20px;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    section h2 {
+        font-size: 21px;
+    }
+
+    .hobby-list {
+        grid-template-columns: 1fr;
+    }
+}
