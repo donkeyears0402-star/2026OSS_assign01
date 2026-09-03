@@ -1,116 +1,204 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이준형 | My Page</title>
     <link rel="stylesheet" href="style.css">
+
+
+<style>
+    body {
+        background: #172033;
+        color: #f1f5f9;
+        font-family: "Trebuchet MS", "Noto Sans KR", sans-serif;
+    }
+
+    .container {
+        color: #f1f5f9;
+    }
+
+    header h1,
+    section h2,
+    section h3 {
+        color: #ffffff;
+        font-family: Georgia, "Times New Roman", serif;
+    }
+
+    header > p:not(.eyebrow),
+    section > p:not(.eyebrow),
+    .card p,
+    .card li {
+        color: #cbd5e1;
+    }
+
+    .eyebrow {
+        color: #7dd3fc;
+    }
+
+    .page-nav a {
+        color: #cbd5e1;
+    }
+
+    .page-nav a.active {
+        color: #ffffff;
+    }
+
+    .hobby-list li {
+        color: #e2e8f0;
+    }
+
+    footer {
+        color: #94a3b8;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #475569;
+        margin: 24px 0;
+    }
+
+    strong {
+        color: #7dd3fc;
+    }
+
+    .github-button {
+        background: #2563eb;
+        color: #ffffff;
+    }
+</style>
+
+
 </head>
 
 <body>
     <div class="container">
 
-        <!-- 페이지 이동 -->
-        <nav class="page-nav">
-            <a href="index.html">About</a>
-            <a href="index2.html" class="active">My Page</a>
-        </nav>
 
-        <!-- 소개 내용 변경 -->
-        <header>
-            <p class="eyebrow">MY STORY</p>
-            <h1>새로운 것을 배우고<br>직접 만들어갑니다.</h1>
+    <!-- 페이지 이동 -->
+    <nav class="page-nav">
+        <a href="index.html">About</a>
+        <a href="index2.html" class="active">My Page</a>
+    </nav>
+
+    <!-- 자기소개 내용 변경 -->
+    <header>
+        <p class="eyebrow">MY STORY</p>
+
+        <h1>
+            새로운 것을 배우고<br>
+            직접 만들어갑니다.
+        </h1>
+
+        <p>
+            한동대학교에서 경영과 컴퓨터공학을 공부하며
+            다양한 기술을 배우고 있습니다.
+        </p>
+    </header>
+
+    <!-- 관심 분야 -->
+    <section>
+        <p class="eyebrow">01 · INTEREST</p>
+
+        <h2>내가 관심 있는 것</h2>
+
+        <div class="card">
+            <h3>웹 서비스 개발</h3>
+
             <p>
-                한동대학교에서 경영과 컴퓨터공학을 공부하며
-                다양한 기술을 배우고 있습니다.
+                아이디어를 실제 웹사이트로 만들고,
+                사람들이 사용할 수 있도록 배포하는 과정에 관심이 있습니다.
             </p>
-        </header>
 
-        <!-- 새로운 구성 -->
-        <section>
-            <p class="eyebrow">01 · INTEREST</p>
-            <h2>내가 관심 있는 것</h2>
+            <!-- 새로운 HTML 요소 추가 -->
+            <hr>
 
-            <div class="card">
-                <h3>웹 서비스 개발</h3>
-                <p>
-                    아이디어를 실제 웹사이트로 만들고,
-                    사람들이 사용할 수 있도록 배포하는 과정에 관심이 있습니다.
-                </p>
+            <p>
+                <strong>관심 기술</strong><br>
+                HTML · CSS · JavaScript · GitHub · Vercel
+            </p>
+        </div>
+    </section>
 
-                <hr>
+    <!-- 취미 변경 -->
+    <section>
+        <p class="eyebrow">02 · HOBBY</p>
 
-                <p>
-                    <strong>관심 기술</strong><br>
-                    HTML · CSS · JavaScript · GitHub · Vercel
-                </p>
-            </div>
-        </section>
+        <h2>나의 취미</h2>
 
-        <!-- 취미 내용 변경 -->
-        <section>
-            <p class="eyebrow">02 · HOBBY</p>
-            <h2>나의 취미</h2>
+        <ul class="hobby-list">
+            <li>드럼 연주</li>
+            <li>새로운 기술 공부</li>
+            <li>자연 속에서 시간 보내기</li>
+            <li>웹사이트 만들어보기</li>
+        </ul>
+    </section>
 
-            <ul class="hobby-list">
-                <li>드럼 연주</li>
-                <li>새로운 기술 공부</li>
-                <li>자연 속에서 시간 보내기</li>
-                <li>웹사이트 만들어보기</li>
+    <!-- 학습 목표 추가 -->
+    <section>
+        <p class="eyebrow">03 · GOAL</p>
+
+        <h2>이번 학기의 목표</h2>
+
+        <div class="card">
+            <h3>GitHub 제대로 사용하기</h3>
+
+            <p>
+                Git을 이용한 버전 관리 방법을 배우고
+                GitHub를 활용하여 프로젝트를 관리하는 것이 목표입니다.
+            </p>
+
+            <ul>
+                <li>Git 기본 명령어 익히기</li>
+                <li>GitHub 저장소 관리하기</li>
+                <li>Branch와 Merge 이해하기</li>
+                <li>Vercel로 웹사이트 배포하기</li>
             </ul>
-        </section>
+        </div>
+    </section>
 
-        <!-- 새로운 내용 추가 -->
-        <section>
-            <p class="eyebrow">03 · GOAL</p>
-            <h2>이번 학기의 목표</h2>
+    <!-- 외부 사이트 링크 -->
+    <section class="github">
+        <p class="eyebrow">04 · LINK</p>
 
-            <div class="card">
-                <h3>GitHub 제대로 사용하기</h3>
-                <p>
-                    Git을 이용한 버전 관리 방법을 배우고
-                    GitHub에 프로젝트를 관리하는 것이 목표입니다.
-                </p>
+        <h2>관련 링크</h2>
 
-                <ul>
-                    <li>Git 기본 명령어 익히기</li>
-                    <li>GitHub 저장소 관리하기</li>
-                    <li>Vercel로 웹사이트 배포하기</li>
-                </ul>
-            </div>
-        </section>
+        <p>
+            제가 사용하는 GitHub 저장소를 확인할 수 있습니다.
+        </p>
 
-        <!-- 외부 사이트 링크 추가 -->
-        <section class="github">
-            <p class="eyebrow">04 · LINK</p>
-            <h2>관련 링크</h2>
+        <a
+            href="https://github.com/donkeyears0402-star/2026OSS_assign01"
+            target="_blank"
+            class="github-button">
+            GitHub 방문하기 ↗
+        </a>
+    </section>
 
-            <p>
-                제가 사용하는 GitHub와 웹 배포 서비스를 확인할 수 있습니다.
-            </p>
+    <!-- 새로운 외부 링크 -->
+    <section>
+        <p class="eyebrow">05 · NAVIGATION</p>
 
-            <a
-                href="https://github.com/donkeyears0402-star/2026OSS_assign01"
-                target="_blank"
-                class="github-button">
-                GitHub 방문하기 ↗
-            </a>
-        </section>
+        <h2>네이버로 이동하기</h2>
 
-        <!-- 페이지 이동 -->
-        <section>
-            <p class="eyebrow">05 · NAVIGATION</p>
-            <h2>네이버로 이동하기</h2>
+        <p>
+            아래 버튼을 클릭하면 네이버 홈페이지로 이동합니다.
+        </p>
 
-            <a href="https://www.naver.com/" class="github-button">
-                네이버 ↗
-            </a>
-        </section>
+        <a
+            href="https://www.naver.com/"
+            target="_blank"
+            class="github-button">
+            네이버 ↗
+        </a>
+    </section>
 
-        <footer>
-            2026 Open Source Software · 이준형
-        </footer>
+    <footer>
+        2026 Open Source Software · 이준형
+    </footer>
 
-    </div>
+</div>
+
 </body>
 </html>
